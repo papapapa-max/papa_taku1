@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宅建 かんたん入門 第1週</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--tx:#1f2933;--sub:#5b6773;--ac:#1e6fd9;--bd:#dde3ea;--mk:rgba(255,214,0,.55);--ok:#1b8a4b;--ng:#c62828;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161b;--card:#1b2128;--tx:#e8ecf0;--sub:#9aa7b4;--ac:#6aa8ff;--bd:#2d3640;--mk:rgba(255,214,0,.38);--ok:#4cc27f;--ng:#ff7b7b}}
+:root[data-theme="dark"]{--bg:#12161b;--card:#1b2128;--tx:#e8ecf0;--sub:#9aa7b4;--ac:#6aa8ff;--bd:#2d3640;--mk:rgba(255,214,0,.38);--ok:#4cc27f;--ng:#ff7b7b}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,"Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;line-height:1.85;font-size:16px}
+.w{max-width:720px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:8px 0 2px}
+.s{color:var(--sub);font-size:13px;margin:0 0 12px}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tab{flex:1;padding:10px 4px;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:10px;font-size:14px;cursor:pointer;line-height:1.4}
+.tab.on{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac) inset;font-weight:700}
+.tab small{display:block;color:var(--sub);font-size:11px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin-bottom:14px}
+h2{font-size:18px;margin:0 0 4px}
+h3{font-size:16px;margin:16px 0 4px;border-left:5px solid var(--ac);padding-left:8px}
+mark{background:linear-gradient(transparent 10%,var(--mk) 10%);color:inherit;padding:0 2px;font-weight:700}
+.t{color:var(--sub);font-size:.9em}
+.box{background:var(--bg);border:1px dashed var(--bd);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:15px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}
+th,td{border:1px solid var(--bd);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--bg)}
+.q{padding:12px 0;border-top:1px solid var(--bd)}
+.q p{margin:0 0 8px}
+.b{display:flex;gap:8px}
+.b button{flex:1;padding:10px;font-size:18px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer}
+.b button:disabled{opacity:.6}
+.ex{margin-top:8px;font-size:14px;padding:8px 10px;border-radius:8px;background:var(--bg)}
+.ok{color:var(--ok);font-weight:700}.ng{color:var(--ng);font-weight:700}
+.done{display:inline-block;margin-top:8px;font-weight:700;color:var(--ok)}
+</style>
+</head>
+<body>
+<div class="w">
+<h1>🏠 宅建 かんたん入門【第1週】</h1>
+<p class="s">平日ごとに1テーマ。<mark>黄色</mark>は特に大事なところ。（　）は用語の説明です。今週は3日分（水・木・金）。</p>
+<div class="tabs" id="tabs"></div>
+<div id="main"></div>
+</div>
+<script>
+var D=[
+{d:"10/21（水）",n:"1日目",t:"宅建業法①　宅建ってどんな資格？",
+body:`
+<h3>宅建とは</h3>
+<p>正式名は<mark>宅地建物取引士</mark>。不動産の売買や賃貸の仲介（売りたい人と買いたい人の間に入って契約を手伝うこと）の場で、お客さんを守る専門家です。</p>
+<h3>宅建「業」って何？</h3>
+<p><mark>宅地建物取引業（宅建業）</mark>とは、土地・建物の取引を<mark>「業として」</mark>行うことです。</p>
+<div class="box"><b>「業として」</b>＝不特定多数（相手を決めずに広く）に、反復継続（くり返し続けて）取引すること。<br>たまたま1回だけ自分の土地を売る人は、宅建業ではありません。</div>
+<table><tr><th>行為</th><th>宅建業になる？</th></tr>
+<tr><td>自分が売る・買う・交換する</td><td>なる</td></tr>
+<tr><td>売買・交換・貸借の代理（本人の代わりに契約する）や媒介（仲介・あいだを取り持つ）</td><td>なる</td></tr>
+<tr><td><mark>自分が貸主になって貸す（自ら貸借）</mark></td><td><mark>ならない（免許不要）</mark></td></tr></table>
+<h3>免許（宅建業をするための許可）</h3>
+<p>宅建業を営むには国や県の<mark>免許</mark>が必要です。事務所（営業所）の場所で、だれの免許かが決まります。</p>
+<table><tr><th>事務所の場所</th><th>免許をくれる人</th></tr>
+<tr><td>1つの都道府県だけ</td><td><mark>都道府県知事</mark></td></tr>
+<tr><td>2つ以上の都道府県にまたがる</td><td><mark>国土交通大臣</mark></td></tr></table>
+<p>免許の有効期間は<mark>5年間</mark>。続けたいときは更新します。</p>
+<h3>宅建士にしかできない仕事（独占業務）</h3>
+<p>独占業務（その資格をもつ人だけに許された仕事）は次の3つ。</p>
+<div class="box">① <mark>重要事項の説明</mark>（契約前に、物件の大事な情報を買う人・借りる人に説明する）<br>② <mark>35条書面への記名</mark>（重要事項を書いた書類に名前を書く）<br>③ <mark>37条書面への記名</mark>（契約内容を書いた書類に名前を書く）</div>
+<p class="t">ポイント：説明は契約が結ばれる<mark>前</mark>に行います。</p>`,
+q:[["自分が所有するアパートを人に貸す（自ら貸借）には、宅建業の免許が必要である。",0,"自ら貸借は宅建業にあたらないので、免許は不要です。"],
+["事務所を2つの都道府県に置いて宅建業をする場合、免許をくれるのは国土交通大臣である。",1,"2つ以上の都道府県に事務所があるときは国土交通大臣です。"],
+["重要事項の説明は、契約が成立したあとに行えばよい。",0,"重要事項の説明は契約が成立する前に行います。"]]},
+{d:"10/22（木）",n:"2日目",t:"権利関係①　民法の入り口",
+body:`
+<h3>民法とは</h3>
+<p><mark>民法</mark>は、私たちの暮らしの基本ルール（お金の貸し借り・売買・家族など）を決めた法律。宅建では「権利関係」として出題されます。</p>
+<h3>制限行為能力者（1人で契約するのに不安があるとして守られる人）</h3>
+<table><tr><th>種類</th><th>ひとこと説明</th></tr>
+<tr><td>未成年者</td><td>18歳未満の人</td></tr>
+<tr><td>成年被後見人</td><td>判断する力がほとんどない人</td></tr>
+<tr><td>被保佐人</td><td>判断する力がかなり弱い人</td></tr>
+<tr><td>被補助人</td><td>判断する力が少し弱い人</td></tr></table>
+<div class="box">たとえば<mark>未成年者が親の同意なしに結んだ契約は、取り消せます</mark>。<br>取消し＝いったん成立した契約を、はじめからなかったことにすること。</div>
+<p>ただし、おこづかいの範囲や、お年玉のように「ただで受け取るだけ」の行為は取り消せません。</p>
+<h3>だまされた・おどされた契約（意思表示）</h3>
+<p>意思表示（「買います」「売ります」と気持ちを相手に伝えること）にキズがある場合のルールです。</p>
+<table><tr><th>パターン</th><th>契約は</th><th>第三者との関係</th></tr>
+<tr><td><mark>詐欺</mark>（だまされた）</td><td>取り消せる</td><td>事情を知らず落ち度もない第三者（善意無過失）には<mark>対抗できない</mark></td></tr>
+<tr><td><mark>強迫</mark>（おどされた）</td><td>取り消せる</td><td>善意の第三者にも<mark>対抗できる</mark></td></tr></table>
+<p class="t">対抗できる＝「取り消したから返して」と主張できること。強迫された人のほうが重く守られます。</p>
+<h3>代理（だれかに契約をまかせる）</h3>
+<p>代理人が本人のために契約すると、その効果は<mark>直接、本人のものになります</mark>。</p>
+<div class="box">代理権（まかせる権限）がないのに代理人のふりをするのが<mark>無権代理</mark>。本人が<mark>追認</mark>（あとから「それでOK」と認めること）しない限り、本人には効力がありません。</div>`,
+q:[["未成年者が親の同意なしに結んだ契約は、原則として取り消すことができる。",1,"その通り。未成年者は取消しによって守られます。"],
+["詐欺で結んだ契約は取り消せるが、強迫で結んだ契約は取り消せない。",0,"どちらも取消しできます。"],
+["代理人が本人のために行った契約の効果は、直接本人に生じる。",1,"代理の基本ルールです。"]]},
+{d:"10/23（金）",n:"3日目",t:"法令上の制限①　街づくりのルール",
+body:`
+<h3>法令上の制限とは</h3>
+<p>土地は好き勝手に使えません。<mark>街の秩序を守るため、国や自治体が「ここにはこう建ててね」と決めたルール</mark>が法令上の制限です。まずは都市計画法と建築基準法の入り口を学びます。</p>
+<h3>市街化区域と市街化調整区域（都市計画法）</h3>
+<table><tr><th>区域</th><th>意味</th></tr>
+<tr><td><mark>市街化区域</mark></td><td>すでに市街地、または10年以内に優先して市街地にする区域。どんどん建てていい</td></tr>
+<tr><td><mark>市街化調整区域</mark></td><td>市街化をおさえる区域（畑や山を守る）。原則、建物は建てにくい</td></tr></table>
+<p class="t">どちらにも決めていない区域を「非線引き区域」といいます。</p>
+<div class="box">土地の造成（家を建てるために土地を整える工事）などの開発行為（建物のための土地の区画形質の変更）をするときは、<mark>開発許可</mark>が必要です。市街化区域では原則<mark>1,000㎡以上</mark>で必要になります。</div>
+<h3>用途地域（どんな建物を建てていいか決めた地域）</h3>
+<p>用途地域は全部で<mark>13種類</mark>。<mark>住居系8・商業系2・工業系3</mark>です。住む場所と工場がごちゃまぜにならないようにするためのものです。</p>
+<h3>建ぺい率と容積率（建築基準法）</h3>
+<table><tr><th>用語</th><th>計算式</th></tr>
+<tr><td><mark>建ぺい率</mark>（敷地にどれだけ建物を建てていいか）</td><td>建築面積（建物を真上から見た面積）÷ 敷地面積</td></tr>
+<tr><td><mark>容積率</mark>（どれだけ大きな建物にしていいか）</td><td>延べ面積（各階の床面積の合計）÷ 敷地面積</td></tr></table>
+<div class="box"><b>例</b>：敷地100㎡、建ぺい率60％、容積率200％<br>→ 建築面積は<mark>最大60㎡</mark>、延べ面積は<mark>最大200㎡</mark>（1階60㎡なら3階建てくらい）</div>`,
+q:[["市街化調整区域は、市街化をおさえる区域である。",1,"その通り。市街化を進める区域は市街化区域です。"],
+["用途地域は全部で13種類ある。",1,"住居系8・商業系2・工業系3の合計13種類です。"],
+["敷地100㎡、容積率200％の場合、延べ面積は最大100㎡である。",0,"100㎡×200％＝200㎡。最大200㎡です。"]]}
+];
+var st={};try{st=JSON.parse(localStorage.getItem("takken1")||"{}")}catch(e){}
+function save(){try{localStorage.setItem("takken1",JSON.stringify(st))}catch(e){}}
+var today=new Date(),cur=0,md=(today.getMonth()+1)+"/"+today.getDate();
+D.forEach(function(x,i){if(x.d.indexOf(md+"（")===0)cur=i});
+function render(){
+var tb=document.getElementById("tabs");tb.innerHTML="";
+D.forEach(function(x,i){var b=document.createElement("button");b.className="tab"+(i===cur?" on":"");
+var c=(st[i]||[]).filter(function(v){return v!=null}).length;
+b.innerHTML=x.n+"<small>"+x.d+(c===3?" ✅":"")+"</small>";b.onclick=function(){cur=i;render();window.scrollTo(0,0)};tb.appendChild(b)});
+var x=D[cur],a=st[cur]||[null,null,null];
+var h='<div class="card"><h2>'+x.t+'</h2>'+x.body+'</div><div class="card"><h2>✏️ 3問チェック（○か×）</h2>';
+x.q.forEach(function(q,i){var r=a[i];
+h+='<div class="q"><p>Q'+(i+1)+'. '+q[0]+'</p><div class="b"><button '+(r!=null?'disabled':'')+' onclick="ans('+i+',1)">○</button><button '+(r!=null?'disabled':'')+' onclick="ans('+i+',0)">×</button></div>';
+if(r!=null){h+='<div class="ex">'+(r===q[1]?'<span class="ok">⭕ 正解！</span> ':'<span class="ng">❌ 不正解。</span> 答えは'+(q[1]?'○':'×')+'。 ')+q[2]+'</div>'}
+h+='</div>'});
+var n=a.filter(function(v){return v!=null}).length;
+if(n===3){var s=a.filter(function(v,i){return v===x.q[i][1]}).length;h+='<div class="done">'+x.n+'おつかれさま！ '+s+'／3問 正解 🎉</div>'}
+h+='</div>';document.getElementById("main").innerHTML=h}
+function ans(i,v){var a=st[cur]||[null,null,null];a[i]=v;st[cur]=a;save();render()}
+render();
+</script>
+</body>
+</html>
